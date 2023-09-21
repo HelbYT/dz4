@@ -1,5 +1,5 @@
 class Student():
-    def init(self, name="None", age=18, iq=60, fakultet="None", fsubject="None", softskill="None"):
+    def __init__(self, name="None", age=18, iq=60, fakultet="None", fsubject="None", softskill="None"):
         self.name = name
         self.age = age
         self.iq = iq
@@ -41,5 +41,23 @@ class Student():
         elif Whatprint == "softskill":
             print("Softskill is " + self.softskill)
 
+class Group():
+    def __init__(self, group):
+        self.group = group
+        self.students = []
+    def addStudent (self, student): 
+        self.students.append(student)
+    def printall(self):
+        if self.students != []: 
+            print(f"Group {self.group} students:")
+            for students in self.students:
+                print(students.name)
+
+
 Oleh = Student("Oleh", 19, 100, "Pryrodnycji", "Biologia", "DoAll")
+Margaryta = Student("Margaryta", 18, 90, "Pryrodnycji", "Geografia", "Work in team")
 Oleh.printsomething("name")
+Group1 = Group("Groupy SS15")
+Group1.addStudent(Oleh)
+Group1.addStudent(Margaryta)
+Group1c.printall()
